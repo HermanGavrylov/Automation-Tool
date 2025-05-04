@@ -4,9 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-
-USERNAME = 'SeleniumProject'
-PASSWORD = '12345678Az$'
+from psswd import USERNAME, PASSWORD
 
 chrome_options = Options()
 chrome_options.add_argument("--disable--search-engine-choice-screen")
@@ -22,6 +20,8 @@ login_button = driver.find_element(By.ID, 'login')
 username_field.send_keys(USERNAME)
 password_field.send_keys(PASSWORD)
 driver.execute_script("arguments[0].click();", login_button)
+
+
 
 input("Press Enter to close the browser")
 driver.quit()
